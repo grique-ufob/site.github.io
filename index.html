@@ -5,58 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRIQUE - Grupo de Informação Quântica e Física Estatística</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #004587; /* Azul institucional */
-            --secondary: #00a859; /* Verde UFOB */
-            --light: #f8f9fa;
-            --dark: #333;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: var(--dark); }
-        
-        /* Ajuste do Header para comportar o botão */
-        header { 
-            background: var(--primary); 
-            color: white; 
-            padding: 3rem 1rem; 
-            text-align: center; 
-            border-bottom: 5px solid var(--secondary);
-            position: relative; 
-        }
-
-        /* Estilo dos Botões de Idioma */
-        .lang-switch {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
-        .lang-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 1px solid white;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-        .lang-btn:hover { background: white; color: var(--primary); }
-        .lang-btn.active { background: var(--secondary); border-color: var(--secondary); }
-
-        nav { background: #eee; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        section { padding: 40px 0; border-bottom: 1px solid #eee; }
-        h2 { color: var(--primary); border-left: 5px solid var(--secondary); padding-left: 10px; }
-        .member-card { background: var(--light); padding: 15px; margin: 10px 0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
-        .btn-lattes { background: #eb7125; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; }
-        .research-item { background: #fff; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
-        footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 40px; }
-
-        /* Lógica de exibição */
-        .lang-en { display: none; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -161,27 +110,6 @@
 <footer>
     <p>&copy; 2024 GRIQUE - UFOB | Desenvolvido via GitHub Pages</p>
 </footer>
-
-<script>
-    function changeLang(lang) {
-        const ptElements = document.querySelectorAll('.lang-pt');
-        const enElements = document.querySelectorAll('.lang-en');
-        const btnPt = document.getElementById('btn-pt');
-        const btnEn = document.getElementById('btn-en');
-
-        if (lang === 'en') {
-            ptElements.forEach(el => el.style.display = 'none');
-            enElements.forEach(el => el.style.display = 'block');
-            btnEn.classList.add('active');
-            btnPt.classList.remove('active');
-        } else {
-            ptElements.forEach(el => el.style.display = 'block');
-            enElements.forEach(el => el.style.display = 'none');
-            btnPt.classList.add('active');
-            btnEn.classList.remove('active');
-        }
-    }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
