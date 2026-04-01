@@ -1,8 +1,14 @@
- function changeLang(lang) {
-        const ptElements = document.querySelectorAll('.lang-pt');
-        const enElements = document.querySelectorAll('.lang-en');
-        const btnPt = document.getElementById('btn-pt');
-        const btnEn = document.getElementById('btn-en');
+document.addEventListener('DOMContentLoaded', () => {
+
+    const ptElements = document.querySelectorAll('.lang-pt');
+    const enElements = document.querySelectorAll('.lang-en');
+    const btnPt = document.getElementById('btn-pt');
+    const btnEn = document.getElementById('btn-en');
+
+    btnEn.addEventListener('click', () => changeLang('en'));
+    btnPt.addEventListener('click', () => changeLang('pt'));
+
+    function changeLang(lang) {
 
         if (lang === 'en') {
             ptElements.forEach(el => el.style.display = 'none');
@@ -16,3 +22,14 @@
             btnEn.classList.remove('active');
         }
     }
+
+
+});
+
+
+
+
+
+
+
+
