@@ -13,7 +13,37 @@
             --dark: #333;
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: var(--dark); }
-        header { background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; border-bottom: 5px solid var(--secondary); }
+        
+        /* Ajuste do Header para comportar o botão */
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 3rem 1rem; 
+            text-align: center; 
+            border-bottom: 5px solid var(--secondary);
+            position: relative; 
+        }
+
+        /* Estilo dos Botões de Idioma */
+        .lang-switch {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .lang-btn:hover { background: white; color: var(--primary); }
+        .lang-btn.active { background: var(--secondary); border-color: var(--secondary); }
+
         nav { background: #eee; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
         .container { max-width: 1000px; margin: auto; padding: 20px; }
@@ -23,63 +53,107 @@
         .btn-lattes { background: #eb7125; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; }
         .research-item { background: #fff; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
         footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 40px; }
+
+        /* Lógica de exibição */
+        .lang-en { display: none; }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="lang-switch">
+        <button class="lang-btn active" id="btn-pt" onclick="changeLang('pt')">PT</button>
+        <button class="lang-btn" id="btn-en" onclick="changeLang('en')">EN</button>
+    </div>
+
     <h1>GRIQUE</h1>
-    <p>Grupo de Informação Quântica e Física Estatística</p>
-    <small>Universidade Federal do Oeste da Bahia (UFOB)</small>
+    
+    <div class="lang-pt">
+        <p>Grupo de Informação Quântica e Física Estatística</p>
+        <small>Universidade Federal do Oeste da Bahia (UFOB)</small>
+    </div>
+    <div class="lang-en">
+        <p>Quantum Information and Statistical Physics Group</p>
+        <small>Federal University of Western Bahia (UFOB)</small>
+    </div>
 </header>
 
 <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#linhas">Pesquisa</a>
-    <a href="#equipe">Membros</a>
-    <a href="#contato">Contato</a>
+    <a href="#sobre" class="lang-pt">Sobre</a>
+    <a href="#sobre" class="lang-en">About</a>
+    
+    <a href="#linhas" class="lang-pt">Pesquisa</a>
+    <a href="#linhas" class="lang-en">Research</a>
+    
+    <a href="#equipe" class="lang-pt">Membros</a>
+    <a href="#equipe" class="lang-en">Members</a>
+    
+    <a href="#contato" class="lang-pt">Contato</a>
+    <a href="#contato" class="lang-en">Contact</a>
 </nav>
 
 <div class="container">
     
     <section id="sobre">
-        <h2>Sobre o Grupo</h2>
-        <p>O GRIQUE, vinculado ao Centro das Ciências Exatas e das Tecnologias (CCET) da UFOB, dedica-se ao estudo teórico e computacional da informação quântica e sistemas estatísticos. Nosso foco inclui o estudo de protocolos de teleporte quântico, algoritmos de busca e a termodinâmica de sistemas fora do equilíbrio.</p>
+        <div class="lang-pt">
+            <h2>Sobre o Grupo</h2>
+            <p>O GRIQUE, vinculado ao Centro das Ciências Exatas e das Tecnologias (CCET) da UFOB, dedica-se ao estudo teórico e computacional da informação quântica e sistemas estatísticos. Nosso foco inclui o estudo de protocolos de teleporte quântico, algoritmos de busca e a termodinâmica de sistemas fora do equilíbrio.</p>
+        </div>
+        <div class="lang-en">
+            <h2>About the Group</h2>
+            <p>GRIQUE, linked to the Center for Exact Sciences and Technologies (CCET) at UFOB, is dedicated to the theoretical and computational study of quantum information and statistical systems. Our focus includes the study of quantum teleportation protocols, search algorithms, and the thermodynamics of out-of-equilibrium systems.</p>
+        </div>
     </section>
 
     <section id="linhas">
-        <h2>Linhas de Pesquisa</h2>
+        <h2 class="lang-pt">Linhas de Pesquisa</h2>
+        <h2 class="lang-en">Research Lines</h2>
+
         <div class="research-item">
-            <strong>Computação Quântica</strong>
-            <p>Estudo de protocolos, portas lógicas e algoritmos quânticos aplicados à tecnologia de próxima geração.</p>
+            <strong class="lang-pt">Computação Quântica</strong>
+            <strong class="lang-en">Quantum Computing</strong>
+            <p class="lang-pt">Estudo de protocolos, portas lógicas e algoritmos quânticos aplicados à tecnologia de próxima geração.</p>
+            <p class="lang-en">Study of protocols, logic gates, and quantum algorithms applied to next-generation technology.</p>
         </div>
+
         <div class="research-item">
-            <strong>Física Estatística</strong>
-            <p>Análise de sistemas complexos e fenômenos de transporte em escalas microscópicas.</p>
+            <strong class="lang-pt">Física Estatística</strong>
+            <strong class="lang-en">Statistical Physics</strong>
+            <p class="lang-pt">Análise de sistemas complexos e fenômenos de transporte em escalas microscópicas.</p>
+            <p class="lang-en">Analysis of complex systems and transport phenomena at microscopic scales.</p>
         </div>
+
         <div class="research-item">
-            <strong>Informação Quântica</strong>
-            <p>Investigação sobre emaranhamento, coerência e correlações quânticas em sistemas físicos.</p>
+            <strong class="lang-pt">Informação Quântica</strong>
+            <strong class="lang-en">Quantum Information</strong>
+            <p class="lang-pt">Investigação sobre emaranhamento, coerência e correlações quânticas em sistemas físicos.</p>
+            <p class="lang-en">Investigation of entanglement, coherence, and quantum correlations in physical systems.</p>
         </div>
     </section>
 
     <section id="equipe">
-        <h2>Membros Principais</h2>
+        <h2 class="lang-pt">Membros Principais</h2>
+        <h2 class="lang-en">Key Members</h2>
+
         <div class="member-card">
             <div>
                 <strong>Prof. Dr. Elias Brito Alves Junior</strong><br>
-                <small>Líder do Grupo</small>
+                <small class="lang-pt">Líder do Grupo</small>
+                <small class="lang-en">Group Leader</small>
             </div>
             <a href="http://lattes.cnpq.br/8966580554593441" class="btn-lattes" target="_blank">Currículo Lattes</a>
         </div>
         
-        <p><small>*Para ver a lista completa de estudantes e pesquisadores colaboradores, acesse o espelho oficial no CNPq.</small></p>
+        <p class="lang-pt"><small>*Para ver a lista completa de membros, acesse o espelho oficial no CNPq.</small></p>
+        <p class="lang-en"><small>*To see the full list of members, access the official CNPq mirror.</small></p>
     </section>
 
     <section id="contato">
-        <h2>Contato</h2>
+        <h2 class="lang-pt">Contato</h2>
+        <h2 class="lang-en">Contact</h2>
         <p><i class="fas fa-envelope"></i> E-mail: grique@ufob.edu.br</p>
-        <p><i class="fas fa-location-dot"></i> Endereço: Campus Reitor Edgard Santos, Barreiras - BA.</p>
+        <p class="lang-pt"><i class="fas fa-location-dot"></i> Endereço: Campus Reitor Edgard Santos, Barreiras - BA.</p>
+        <p class="lang-en"><i class="fas fa-location-dot"></i> Address: Reitor Edgard Santos Campus, Barreiras - BA, Brazil.</p>
     </section>
 
 </div>
@@ -87,6 +161,27 @@
 <footer>
     <p>&copy; 2024 GRIQUE - UFOB | Desenvolvido via GitHub Pages</p>
 </footer>
+
+<script>
+    function changeLang(lang) {
+        const ptElements = document.querySelectorAll('.lang-pt');
+        const enElements = document.querySelectorAll('.lang-en');
+        const btnPt = document.getElementById('btn-pt');
+        const btnEn = document.getElementById('btn-en');
+
+        if (lang === 'en') {
+            ptElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = 'block');
+            btnEn.classList.add('active');
+            btnPt.classList.remove('active');
+        } else {
+            ptElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'none');
+            btnPt.classList.add('active');
+            btnEn.classList.remove('active');
+        }
+    }
+</script>
 
 </body>
 </html>
