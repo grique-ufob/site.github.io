@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais - GRIQUE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+
+<header>
+    <div class="lang-switch">
+        <button class="lang-btn active" id="btn-pt">PT</button>
+        <button class="lang-btn" id="btn-en">EN</button>
+    </div>
+    <img src="img/logo.png" alt="Logo GRIQUE" class="grique-logo">
+    <div class="lang-pt"><h1 class="main-title">Materiais Didáticos</h1></div>
+    <div class="lang-en"><h1 class="main-title">Teaching Materials</h1></div>
+</header>
+
+<nav>
+    <a href="index.html"> <span class="lang-pt">Início</span><span class="lang-en">Home</span></a>
+    <a href="publicacoes.html"> <span class="lang-pt">Publicações</span><span class="lang-en">Publications</span></a>
+    <a href="materiais.html" style="background: var(--primary); color: white;"> <span class="lang-pt">Materiais</span><span class="lang-en">Materials</span></a>
+</nav>
+
+<div class="container">
+    <section>
+        <h2 class="lang-pt">Recursos para Download</h2>
+        <h2 class="lang-en">Download Resources</h2>
+        
+        <div class="research-item">
+            <p><i class="fas fa-file-pdf"></i> <strong>Introdução à Informação Quântica</strong></p>
+            <p class="lang-pt">Notas de aula cobrindo os fundamentos de qubits e portas lógicas.</p>
+            <p class="lang-en">Lecture notes covering the fundamentals of qubits and logic gates.</p>
+            <a href="pdf/notas-aula-quântica.pdf" class="btn-lattes">Download PDF</a>
+        </div>
+
+        <div class="research-item">
+            <p><i class="fab fa-python"></i> <strong>Scripts de Simulação</strong></p>
+            <p class="lang-pt">Código em Python para cálculo de entropia de emaranhamento.</p>
+            <p class="lang-en">Python code for entanglement entropy calculation.</p>
+            <a href="#" class="btn-lattes">GitHub Repo</a>
+        </div>
+    </section>
+</div>
+
+<footer><p>&copy; 2026 GRIQUE - UFOB</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
