@@ -1,41 +1,95 @@
- :root {
-     --primary: #004587;
-     /* Azul institucional */
-     --secondary: #00a859;
-     /* Verde UFOB */
-     --light: #f8f9fa;
-     --dark: #333;
- }
+/* 1. CONFIGURAÇÕES GERAIS */
+:root {
+    --primary: #004587;
+    --secondary: #00a859;
+    --light: #f8f9fa;
+    --dark: #333;
+}
 
- body {
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     line-height: 1.6;
-     margin: 0;
-     color: var(--dark);
- }
-/* Estilo da Logo */
-        .grique-logo {
-    max-width: 220px; /* Aumentei de 130px para 220px */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--dark);
+    background-color: #fff;
+}
+
+/* 2. CABEÇALHO E LOGO */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary);
+    position: relative;
+}
+
+.grique-logo {
+    max-width: 220px;
     height: auto;
     display: block;
     margin: 0 auto 1.5rem auto;
-    /* Se a logo estiver muito clara, você pode adicionar um brilho suave: */
     filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.3));
 }
- /* Ajuste do Header para comportar o botão */
- header {
-     background: var(--primary);
-     color: white;
-     padding: 3rem 1rem;
-     text-align: center;
-     border-bottom: 5px solid var(--secondary);
-     position: relative;
- }
 
-/* Carrossel de Notícias */
+.main-title {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+}
+
+/* 3. BOTÕES DE IDIOMA */
+.lang-switch {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.lang-btn:hover { background: white; color: var(--primary); }
+.lang-btn.active { background: var(--secondary); border-color: var(--secondary); }
+
+/* 4. NAVEGAÇÃO */
+nav {
+    background: #eee;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover { background: var(--primary); color: white !important; }
+
+/* 5. CARROSSEL DE NOTÍCIAS */
 .news-carousel {
-    background: #e9ecef; /* Um cinza claro para destacar do branco */
-    padding: 30px 0;
+    background: #e9ecef;
+    padding: 40px 0;
     border-bottom: 3px solid var(--secondary);
 }
 
@@ -43,21 +97,22 @@
     max-width: 1000px;
     margin: auto;
     position: relative;
-    min-height: 150px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .news-slide {
-    display: none; /* Oculto por padrão, o JS vai mostrar o 'active' */
+    display: none;
     width: 80%;
     text-align: center;
-    animation: fade 1s; /* Efeito de suavidade */
 }
 
-.news-slide.active {
-    display: block;
+.news-slide.active { 
+    display: block; 
+    animation: fade 0.8s; 
 }
 
 .news-tag {
@@ -70,12 +125,8 @@
     text-transform: uppercase;
 }
 
-.news-content h3 {
-    color: var(--primary);
-    margin: 15px 0 5px 0;
-}
+.news-content h3 { margin: 15px 0 5px 0; color: var(--primary); }
 
-/* Botões de navegação */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -90,126 +141,61 @@
     transition: 0.3s;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 15px; }
+.next { right: 15px; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.1); }
 
-.prev:hover, .next:hover {
-    background: rgba(0,0,0,0.1);
+@keyframes fade { from {opacity: 0.4} to {opacity: 1} }
+
+/* 6. CONTEÚDO E SEÇÕES */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* Animação de entrada */
-@keyframes fade {
-    from { opacity: 0.2; }
-    to { opacity: 1; }
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
 }
 
-/* Ajuste do Nav para muitas abas */
-nav {
+h2 {
+    color: var(--primary);
+    border-left: 5px solid var(--secondary);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+.member-card, .research-item {
+    background: var(--light);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.member-card {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
-nav a { font-size: 0.9rem; padding: 5px 10px; border-radius: 5px; transition: 0.3s; }
-nav a:hover { background: var(--primary); color: white !important; }
- /* Estilo dos Botões de Idioma */
- .lang-switch {
-     position: absolute;
-     top: 15px;
-     right: 15px;
- }
 
- .lang-btn {
-     background: rgba(255, 255, 255, 0.2);
-     color: white;
-     border: 1px solid white;
-     padding: 5px 10px;
-     cursor: pointer;
-     font-size: 0.8rem;
-     border-radius: 4px;
-     transition: 0.3s;
-     text-transform: uppercase;
- }
+.btn-lattes {
+    background: #eb7125;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
 
- .lang-btn:hover {
-     background: white;
-     color: var(--primary);
- }
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
 
- .lang-btn.active {
-     background: var(--secondary);
-     border-color: var(--secondary);
- }
-
- nav {
-     background: #eee;
-     padding: 10px;
-     text-align: center;
-     position: sticky;
-     top: 0;
-     z-index: 1000;
- }
-
- nav a {
-     margin: 0 15px;
-     text-decoration: none;
-     color: var(--primary);
-     font-weight: bold;
- }
-
- .container {
-     max-width: 1000px;
-     margin: auto;
-     padding: 20px;
- }
-
- section {
-     padding: 40px 0;
-     border-bottom: 1px solid #eee;
- }
-
- h2 {
-     color: var(--primary);
-     border-left: 5px solid var(--secondary);
-     padding-left: 10px;
- }
-
- .member-card {
-     background: var(--light);
-     padding: 15px;
-     margin: 10px 0;
-     border-radius: 8px;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
-
- .btn-lattes {
-     background: #eb7125;
-     color: white;
-     text-decoration: none;
-     padding: 5px 10px;
-     border-radius: 4px;
-     font-size: 0.8rem;
- }
-
- .research-item {
-     background: #fff;
-     border: 1px solid #ddd;
-     padding: 15px;
-     margin-bottom: 10px;
-     border-radius: 5px;
- }
-
- footer {
-     background: var(--dark);
-     color: white;
-     text-align: center;
-     padding: 20px;
-     margin-top: 40px;
- }
-
- /* Lógica de exibição */
- .lang-en {
-     display: none;
- }
+.lang-en { display: none; }
