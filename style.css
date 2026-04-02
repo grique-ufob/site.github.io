@@ -15,12 +15,13 @@
  }
 /* Estilo da Logo */
         .grique-logo {
-            max-width: 140px; /* Ajuste esse valor se quiser a logo maior ou menor */
-            height: auto;
-            display: block;
-            margin: 0 auto 1rem auto; /* Centraliza e dá espaço para o texto abaixo */
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2)); /* Opcional: dá uma leve sombra */
-        }
+    max-width: 220px; /* Aumentei de 130px para 220px */
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    /* Se a logo estiver muito clara, você pode adicionar um brilho suave: */
+    filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.3));
+}
  /* Ajuste do Header para comportar o botão */
  header {
      background: var(--primary);
