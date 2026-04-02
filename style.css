@@ -31,54 +31,77 @@
      border-bottom: 5px solid var(--secondary);
      position: relative;
  }
-/* Estilo do Carrossel */
+
+/* Carrossel de Notícias */
 .news-carousel {
-    background: #e9ecef;
-    padding: 20px 0;
-    border-bottom: 2px solid var(--secondary);
+    background: #e9ecef; /* Um cinza claro para destacar do branco */
+    padding: 30px 0;
+    border-bottom: 3px solid var(--secondary);
 }
+
 .carousel-container {
     max-width: 1000px;
     margin: auto;
     position: relative;
-    overflow: hidden;
-    height: 180px;
+    min-height: 150px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
+
 .news-slide {
-    display: none;
-    width: 100%;
+    display: none; /* Oculto por padrão, o JS vai mostrar o 'active' */
+    width: 80%;
     text-align: center;
-    padding: 0 50px;
+    animation: fade 1s; /* Efeito de suavidade */
 }
-.news-slide.active { display: block; animation: fade 0.8s; }
+
+.news-slide.active {
+    display: block;
+}
+
 .news-tag {
     background: var(--secondary);
     color: white;
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
 }
-.news-content h3 { margin: 10px 0 5px 0; color: var(--primary); }
 
-/* Botões do Carrossel */
+.news-content h3 {
+    color: var(--primary);
+    margin: 15px 0 5px 0;
+}
+
+/* Botões de navegação */
 .prev, .next {
     position: absolute;
-    cursor: pointer;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
+    background: rgba(0,0,0,0.05);
     border: none;
-    font-size: 24px;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
     color: var(--primary);
+    border-radius: 50%;
+    transition: 0.3s;
 }
-.next { right: 10px; }
-.prev { left: 10px; }
 
-@keyframes fade { from {opacity: .4} to {opacity: 1} }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+/* Animação de entrada */
+@keyframes fade {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
 
 /* Ajuste do Nav para muitas abas */
 nav {
