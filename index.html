@@ -33,19 +33,47 @@
 </header>
 
 <nav>
-    <a href="#sobre" class="lang-pt">Sobre</a>
-    <a href="#sobre" class="lang-en">About</a>
+    <a href="#sobre"><i class="fas fa-info-circle"></i> <span class="lang-pt">Sobre</span><span class="lang-en">About</span></a>
+    <a href="#pesquisa"><i class="fas fa-atom"></i> <span class="lang-pt">Pesquisa</span><span class="lang-en">Research</span></a>
     
-    <a href="#linhas" class="lang-pt">Pesquisa</a>
-    <a href="#linhas" class="lang-en">Research</a>
+    <a href="#publicacoes"><i class="fas fa-file-alt"></i> <span class="lang-pt">Publicações</span><span class="lang-en">Publications</span></a>
+    <a href="#projetos"><i class="fas fa-project-diagram"></i> <span class="lang-pt">Projetos</span><span class="lang-en">Projects</span></a>
+    <a href="#eventos"><i class="fas fa-calendar-alt"></i> <span class="lang-pt">Eventos</span><span class="lang-en">Events</span></a>
+    <a href="#materiais"><i class="fas fa-book"></i> <span class="lang-pt">Materiais</span><span class="lang-en">Materials</span></a>
     
-    <a href="#equipe" class="lang-pt">Membros</a>
-    <a href="#equipe" class="lang-en">Members</a>
-    
-    <a href="#contato" class="lang-pt">Contato</a>
-    <a href="#contato" class="lang-en">Contact</a>
+    <a href="#equipe"><i class="fas fa-users"></i> <span class="lang-pt">Membros</span><span class="lang-en">Members</span></a>
+    <a href="#contato"><i class="fas fa-envelope"></i> <span class="lang-pt">Contato</span><span class="lang-en">Contact</span></a>
 </nav>
+    
+<section class="news-carousel">
+    <div class="carousel-container">
+        <div class="news-slide active">
+            <div class="news-content">
+                <span class="news-tag lang-pt">Nova Publicação</span>
+                <span class="news-tag lang-en">New Publication</span>
+                <h3 class="lang-pt">Artigo aceito na Physical Review A</h3>
+                <h3 class="lang-en">Paper accepted at Physical Review A</h3>
+                <p class="lang-pt">Pesquisa sobre emaranhamento quântico em sistemas de spins.</p>
+                <p class="lang-en">Research on quantum entanglement in spin systems.</p>
+            </div>
+        </div>
 
+        <div class="news-slide">
+            <div class="news-content">
+                <span class="news-tag lang-pt">Evento</span>
+                <span class="news-tag lang-en">Event</span>
+                <h3 class="lang-pt">Defesa de Mestrado - 15/05</h3>
+                <h3 class="lang-en">Master's Defense - May 15th</h3>
+                <p class="lang-pt">Título: Termodinâmica Quântica em Nanodispositivos.</p>
+                <p class="lang-en">Title: Quantum Thermodynamics in Nanodevices.</p>
+            </div>
+        </div>
+        
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+    
 <div class="container">
     
     <section id="sobre">
