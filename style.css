@@ -269,17 +269,52 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--light);
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
 }
 
-.btn-lattes {
-    background: #eb7125;
-    color: white;
-    text-decoration: none;
-    padding: 10px 18px; /* Botões um pouco maiores para facilitar o clique */
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: bold;
+/* Container para os botões do pesquisador ficarem lado a lado */
+.member-buttons-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
+
+/* Estilo Base dos Botões (Lattes, Scholar, Orcid) */
+.btn-lattes {
+    background: #eb7125; /* Laranja Lattes original */
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+/* Cores específicas mantendo a classe btn-lattes */
+.btn-lattes.scholar {
+    background-color: #4285f4; /* Azul Google */
+}
+
+.btn-lattes.orcid {
+    background-color: #A6CE39; /* Verde ORCID */
+}
+
+.btn-lattes:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
 /* Botão Flutuante do Instagram */
 .instagram-float {
     position: fixed;
