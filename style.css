@@ -88,9 +88,9 @@ nav a, .dropbtn {
     text-decoration: none;
     color: var(--primary);
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     transition: 0.3s;
-    min-width: 100px; /* Garante um espaço mínimo para cada botão */
+    min-width: 90px; /* Garante um espaço mínimo para cada botão */
 }
 
 nav i {
