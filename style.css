@@ -276,42 +276,45 @@ h2 {
     border: 1px solid #ddd;
 }
 
-/* Container para os botões do pesquisador ficarem lado a lado */
+/* Container para os botões do pesquisador ficarem um EMBAIXO do outro */
 .member-buttons-container {
     display: flex;
+    flex-direction: column; /* FORÇA a ficar um embaixo do outro */
     gap: 10px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    align-items: flex-end; /* Alinha os botões à direita no desktop */
 }
 
-/* Estilo Base dos Botões (Lattes, Scholar, Orcid) */
+/* Ajuste nos botões para terem o mesmo tamanho */
 .btn-lattes {
-    background: #eb7125; /* Laranja Lattes original */
+    background: #eb7125;
     color: white !important;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: 0.3s;
+    min-width: 160px; /* Garante que todos os botões tenham a mesma largura */
+    justify-content: flex-start; /* Alinha o ícone e texto à esquerda dentro do botão */
 }
 
-/* Cores específicas mantendo a classe btn-lattes */
-.btn-lattes.scholar {
-    background-color: #4285f4; /* Azul Google */
-}
+/* Cores específicas */
+.btn-lattes.scholar { background-color: #4285f4; }
+.btn-lattes.orcid { background-color: #A6CE39; }
 
-.btn-lattes.orcid {
-    background-color: #A6CE39; /* Verde ORCID */
-}
-
-.btn-lattes:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .member-buttons-container {
+        align-items: center; /* Centraliza a coluna de botões no celular */
+        width: 100%;
+    }
+    .btn-lattes {
+        width: 80%; /* Ocupa a maior parte da tela no celular */
+        justify-content: center; /* Centraliza o conteúdo do botão no celular */
+    }
 }
 
 
