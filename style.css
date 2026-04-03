@@ -12,11 +12,11 @@ body {
     margin: 0;
     color: var(--dark);
     background-color: #fff;
-    font-size: 1.1rem; /* Aumenta a fonte base de todo o site */
+    font-size: 1.3rem; /* Aumenta a fonte base de todo o site */
 }
 
 p {
-    font-size: 1.1rem; /* Garante que parágrafos fiquem bem legíveis */
+    font-size: 1.3rem; /* Garante que parágrafos fiquem bem legíveis */
 }
 
 /* 2. CABEÇALHO E LOGO */
@@ -38,9 +38,9 @@ header {
 }
 
 .main-title {
-    font-size: 2.2rem; /* Era 1.8rem, agora mais imponente */
+    font-size: 2.5rem; /* Era 1.8rem, agora mais imponente */
     margin: 0.5rem 0;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 /* 3. BOTÕES DE IDIOMA */
