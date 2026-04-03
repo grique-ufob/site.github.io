@@ -250,110 +250,153 @@ h2 {
     border-left: 5px solid var(--secondary);
     padding-left: 15px;
     margin-bottom: 30px;
-    font-size: 1.8rem; /* Títulos das seções (Sobre, Membros, etc) */
+    font-size: 1.8rem;
 }
 
+/* Card Geral */
 .member-card, .research-item {
     background: var(--light);
-    padding: 25px; /* Mais respiro interno */
+    padding: 25px;
     margin: 15px 0;
     border-radius: 8px;
     border: 1px solid #ddd;
 }
 
-.member-card strong, .research-item strong {
-    font-size: 1.2rem; /* Nomes de membros e títulos de artigos em destaque */
+/* Título das subcategorias (Professores, Mestrado...) */
+.category-title {
+    color: var(--secondary);
+    font-size: 1.4rem;
+    margin: 30px 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Ajuste específico para o card de membros */
 .member-card {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinha o topo da foto com o topo do texto */
+    align-items: center;
     background: var(--light);
     padding: 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    border-left: 4px solid var(--primary); /* Mantém o detalhe visual */
-    gap: 20px; /* Espaço entre o bloco da foto/nome e os botões */
+    border-left: 4px solid var(--primary); /* Detalhe visual */
+    gap: 20px;
 }
 
-/* Novo container para foto e nome ficarem lado a lado */
+/* Bloco da foto e nome lado a lado */
 .member-main-content {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espaço entre a foto e o texto do nome */
-    flex: 1; /* Ocupa o espaço disponível à esquerda */
+    gap: 20px;
+    flex: 1;
 }
 
-/* Estilo da Foto */
+/* Foto Redonda */
 .member-photo-container {
-    width: 100px;  /* Tamanho da foto no desktop */
+    width: 100px;
     height: 100px;
-    flex-shrink: 0; /* Impede que a foto seja espremida */
+    flex-shrink: 0;
 }
 
 .member-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a foto preencha o quadrado sem distorcer */
-    border-radius: 50%; /* Foto redonda (estilo acadêmico/profissional) */
+    object-fit: cover;
+    border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .member-info strong {
-    font-size: 1.3rem; /* Nome um pouco maior para destacar ao lado da foto */
+    font-size: 1.3rem;
+    color: var(--dark);
 }
 
-/* Container dos botões (Mantendo um embaixo do outro como solicitado antes) */
+/* Container dos botões em coluna */
 .member-buttons-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    align-items: flex-end; /* Alinha os botões à direita */
-    flex-shrink: 0; /* Impede que os botões sejam espremidos */
+    align-items: flex-end;
+    flex-shrink: 0;
 }
 
-/* Ajuste nos botões para alinhamento vertical */
+/* ======================================================== */
+/* --- ESTILO DOS BOTÕES (LATTES, SCHOLAR, ORCID) ---      */
+/* ADICIONEI ESTE BLOCO ABAIXO QUE ESTAVA FALTANDO NO SEU   */
+/* ======================================================== */
+
 .btn-lattes {
-    /* ... seus estilos anteriores de cor e fonte ... */
-    min-width: 160px; /* Mantém a largura simétrica */
-    justify-content: flex-start; /* Alinha ícone/texto à esquerda dentro do botão */
-    padding: 8px 12px;
+    background: #eb7125; /* Laranja Lattes original */
+    color: white !important; /* Cor do texto e ícone branquinho */
+    text-decoration: none !important; /* Remove o sublinhado */
+    padding: 10px 15px;
+    border-radius: 4px;
     font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-flex; /* Para ícone e texto ficarem lado a lado */
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    min-width: 160px; /* Largura simétrica */
+    justify-content: flex-start; /* Ícone e texto alinhados à esquerda dentro do botão */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Um detalhe visual suave */
 }
 
-/* --- AJUSTE RESPONSIVO PARA FOTO NO CELULAR --- */
+/* Garante que o ícone do Font Awesome também fique branco */
+.btn-lattes i {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Cores específicas mantendo a base .btn-lattes */
+.btn-lattes.scholar {
+    background-color: #4285f4; /* Azul Google */
+}
+
+.btn-lattes.orcid {
+    background-color: #A6CE39; /* Verde ORCID */
+}
+
+/* Efeito ao passar o mouse */
+.btn-lattes:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ======================================================== */
+/* --- FIM DO BLOCO DE ESTILO DOS BOTÕES ---               */
+/* ======================================================== */
+
+/* --- AJUSTE RESPONSIVO PARA FOTO NO CELULAR (MANTER) --- */
 @media (max-width: 768px) {
     .member-card {
-        flex-direction: column; /* Empilha tudo verticalmente no celular */
+        flex-direction: column;
         text-align: center;
         align-items: center;
     }
 
     .member-main-content {
-        flex-direction: column; /* Foto em cima, nome embaixo no celular */
+        flex-direction: column;
         gap: 10px;
     }
 
     .member-photo-container {
-        width: 120px; /* Foto um pouco maior no celular para destaque central */
+        width: 120px;
         height: 120px;
     }
 
     .member-buttons-container {
-        align-items: center; /* Centraliza a coluna de botões */
+        align-items: center;
         width: 100%;
         margin-top: 10px;
     }
 
     .btn-lattes {
-        width: 100%; /* Botões ocupam a largura total no celular */
-        justify-content: center; /* Centraliza o conteúdo do botão */
+        width: 100%;
+        justify-content: center; /* Centraliza no celular */
     }
 }
-
 
 /* Botão Flutuante do Instagram */
 .instagram-float {
