@@ -281,4 +281,48 @@ footer {
     margin-top: 40px;
 }
 
+/* --- Ajustes para Celular (Responsividade) --- */
+
+@media (max-width: 768px) {
+    .nav-container {
+        gap: 10px; /* Diminui o espaço entre os itens */
+        padding: 10px;
+        justify-content: space-around; /* Distribui melhor no espaço */
+    }
+
+    .nav-item {
+        flex: 1 1 30%; /* Faz cada item ocupar cerca de 1/3 da largura da tela */
+        font-size: 0.8rem; /* Diminui um pouco a fonte no celular */
+        margin-bottom: 15px;
+    }
+
+    .nav-item i {
+        font-size: 1.2rem; /* Ícones um pouco menores */
+    }
+
+    /* Ajuste para o Submenu no Celular */
+    .dropdown:hover .submenu {
+        position: fixed; /* Evita que o submenu empurre o resto do site */
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Ocultar o Instagram se o espaço for muito curto ou garantir que ele quebre linha */
+    .insta-link {
+        flex: 1 1 100%; /* No celular, o Instagram ganha uma linha só dele no final */
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+    }
+}
+
+/* Ajuste extra para telas MUITO pequenas (iPhone SE, etc) */
+@media (max-width: 480px) {
+    .nav-item {
+        flex: 1 1 45%; /* Apenas 2 itens por linha */
+    }
+}
 .lang-en { display: none; }
